@@ -2,14 +2,13 @@
 
 namespace Database\Seeders;
 
+use App\Models\Diary;
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class DiarySeeder extends Seeder
 {
     public function run()
     {
-        $this->call([
-            DiarySeeder::class,
-        ]);
+        Diary::factory()->count(30)->create();
     }
 }
