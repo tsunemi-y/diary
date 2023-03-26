@@ -15,3 +15,5 @@ use App\Http\Controllers\DiaryController;
 */
 
 Route::get('/', [DiaryController::class, 'index'])->name('diaries.index');
+
+Route::get('diaries/{diary}', [DiaryController::class, 'show'])->name('diaries.show');

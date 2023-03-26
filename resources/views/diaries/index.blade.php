@@ -11,18 +11,20 @@
     <div class="container">
       <div class="row">
         @foreach ($diaries as $diary)
-          <div class="col-md-4">
-            <div class="card mb-4 box-shadow">
-              <img class="card-img-top" src="{{ $diary->image }}" alt="{{ $diary->title }}">
-              <div class="card-body">
-                <h5 class="card-title">{{ $diary->title }}</h5>
-                <p class="card-text">{{ $diary->content }}</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <small class="text-muted">{{ $diary->created_at->format('Y/m/d') }}</small>
+            <a href="{{ route('diaries.show', $diary->id) }}">
+                <div class="col-md-4">
+                    <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" src="{{ $diary->image }}" alt="{{ $diary->title }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $diary->title }}</h5>
+                        <p class="card-text">{{ $diary->content }}</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                        <small class="text-muted">{{ $diary->created_at->format('Y/m/d') }}</small>
+                        </div>
+                    </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div>
+            </a>
         @endforeach
       </div>
       <div class="row">

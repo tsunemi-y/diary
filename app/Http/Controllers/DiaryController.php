@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Services\DiaryService;
+use App\Models\Diary;
 use Illuminate\Http\Request;
 
 class DiaryController extends Controller
@@ -53,9 +54,9 @@ class DiaryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Diary $diary)
     {
-        //
+        return view('diaries.show', compact('diary'));
     }
 
     /**
