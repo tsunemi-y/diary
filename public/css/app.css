@@ -1,0 +1,37 @@
+.pagination {
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  .pagination > li a,
+  .pagination > li span {
+    color: #000;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .pagination > li a:hover,
+  .pagination > li span:hover {
+    background-color: #e9ecef;
+  }
+  
+  .page-link {
+    border: none;
+  }
+  
+  .page-item.active .page-link {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .page-item.disabled .page-link {
+    color: #6c757d;
+  }
+  
+  .page-link:hover {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
