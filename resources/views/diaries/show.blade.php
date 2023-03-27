@@ -4,5 +4,9 @@
         <h5 class="card-title">{{ $diary->title }}</h5>
         <p class="card-text">{{ $diary->content }}</p>
     </div>
+    <div class="card-footer text-muted">
+        {{ $diary->created_at->format('Y-m-d H:i:s') }}
+        <a href="{{ route('diaries.edit', ['diary' => $diary->id]) }}" class="btn btn-primary float-right">編集</a>
+    </div>
 </div>
 

@@ -11,4 +11,9 @@ class FileService
         $path = $file->store('public/images');
         return Storage::url($path);
     }
+
+    public function delete($file)
+    {
+        Storage::delete($file);
+    }
 }

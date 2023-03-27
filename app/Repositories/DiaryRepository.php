@@ -11,11 +11,6 @@ class DiaryRepository
         return Diary::latest()->paginate($perPage);
     }
 
-    public function getById($id)
-    {
-        return Diary::findOrFail($id);
-    }
-
     public function create(array $data)
     {
         return Diary::create([
@@ -23,5 +18,16 @@ class DiaryRepository
             'content' => $data['content'],
             'image'   => $data['image'],
         ]);
+    }
+
+    public function update($id, array $data)
+    {
+        return Diary::where('id', $id)
+            ->update([
+                'title'   => $data['title'],
+                'content' => $data['content'],
+                'image'   => $data['image'],
+            ]);
+    
     }
 }

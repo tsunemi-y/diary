@@ -21,14 +21,16 @@ class DiaryService
         return $this->diaryRepository->getAllPaginated($perPage);
     }
 
-    public function getById($id)
-    {
-        return $this->diaryRepository->getById($id);
-    }
-
     public function create(array $data)
     {
         $data['image'] = $this->fileService->upload($data['image']);
         return $this->diaryRepository->create($data);
+    }
+
+    public function update($diary, array $data)
+    {
+        $data['image'] = $this->fileService->upload($data['image']);
+        $this->fileService->delete($diary->image);
+        return $this->diaryRepository->update($diary->id, $data);
     }
 }

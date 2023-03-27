@@ -69,9 +69,9 @@ class DiaryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Diary $diary)
     {
-        //
+        return view('diaries.edit', compact('diary'));
     }
 
     /**
@@ -81,9 +81,10 @@ class DiaryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateDiaryRequest $request, Diary $diary)
     {
-        //
+        $this->diaryService->update($diary, $request->all());
+        return redirect()->route('diaries.index');
     }
 
     /**
