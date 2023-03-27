@@ -28,6 +28,10 @@ class DiaryRepository
                 'content' => $data['content'],
                 'image'   => $data['image'],
             ]);
-    
+    }
+
+    public function delete($diary)
+    {
+        $diary->delete();
     }
 }

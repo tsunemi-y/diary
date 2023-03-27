@@ -33,4 +33,10 @@ class DiaryService
         $this->fileService->delete($diary->image);
         return $this->diaryRepository->update($diary->id, $data);
     }
+
+    public function delete($diary)
+    {
+        $this->fileService->delete($diary->image);
+        return $this->diaryRepository->delete($diary);
+    }
 }
