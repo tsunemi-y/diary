@@ -15,4 +15,13 @@ class DiaryRepository
     {
         return Diary::findOrFail($id);
     }
+
+    public function create(array $data)
+    {
+        return Diary::create([
+            'title'   => $data['title'],
+            'content' => $data['content'],
+            'image'   => $data['image'],
+        ]);
+    }
 }

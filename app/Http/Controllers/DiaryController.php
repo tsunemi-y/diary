@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\DiaryService;
 use App\Models\Diary;
 use Illuminate\Http\Request;
+use App\Services\DiaryService;
+use App\Http\Requests\CreateDiaryRequest;
+
+use Illuminate\Support\Facades\Session;
 
 class DiaryController extends Controller
 {
@@ -34,7 +37,7 @@ class DiaryController extends Controller
      */
     public function create()
     {
-        //
+        return view('diaries.create');
     }
 
     /**
@@ -43,9 +46,10 @@ class DiaryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateDiaryRequest $request)
     {
-        //
+        $this->diaryService->create($request->all());
+        return redirect()->route('diaries.index');
     }
 
     /**

@@ -27,6 +27,11 @@
             </a>
         @endforeach
       </div>
+      <div class="row mt-5">
+        <div class="col-12 text-center">
+          <a href="{{ route('diaries.create') }}" class="btn btn-primary">新規作成</a>
+        </div>
+      </div>      
       <div class="row">
         <div class="col-12">
           {{ $diaries->links() }}
