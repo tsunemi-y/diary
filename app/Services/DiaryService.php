@@ -16,7 +16,7 @@ class DiaryService
         $this->fileService = $fileService;
     }
 
-    public function getAllPaginated($perPage = 10)
+    public function getAllPaginated($perPage = 5)
     {
         return $this->diaryRepository->getAllPaginated($perPage);
     }
